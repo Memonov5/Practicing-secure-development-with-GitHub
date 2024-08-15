@@ -1,0 +1,14 @@
+// Mockup of a more secure authentication mechanism
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // In a real application, perform authentication on the server
+    // Here we use a placeholder example
+    if (username === 'admin' && password === 'admin123') {
+        alert('Login successful!');
+        document.body.innerHTML += `<p>Welcome, ${sanitizeInput(username)}!</p>`;
+    } else {
+        alert('Invalid credentials!');
+    }
+}

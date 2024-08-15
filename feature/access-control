@@ -1,0 +1,22 @@
+// Ensure only authorized users see certain content
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === 'admin' && password === 'admin123') {
+        alert('Login successful!');
+        document.body.innerHTML += `<p>Welcome, ${sanitizeInput(username)}!</p>`;
+    } else {
+        alert('Invalid credentials!');
+    }
+}
+
+function isAuthenticated() {
+    // Placeholder for actual authentication check
+    return sessionStorage.getItem('auth') === 'true';
+}
+
+if (!isAuthenticated()) {
+    // Redirect to login page or show login form
+    alert('You need to login to access this page.');
+}
